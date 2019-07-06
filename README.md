@@ -18,6 +18,17 @@ Hide delay: 150
 Shot Unpinned: True
 ```
 
+## Plasma
+```
+Look and Feel: Sweet (Sets lots of other settings.)
+Cursors: Win8
+Splash Screen: Breeze
+Icons: Papirus Dark
+Emoticons: EmojiOne
+Kvantum: Sweet
+GTK: Breeze-Dark
+```
+
 ## Polybar
 My [Polybar](https://github.com/jaagr/polybar) config is based on adi1090x's [Polybar-2 Grey](https://github.com/adi1090x/polybar-themes) just modified to my personal liking.
 
