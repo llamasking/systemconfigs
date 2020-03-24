@@ -1,0 +1,50 @@
+#! /bin/sh
+
+# Start the basic things
+picom --experimental-backends &
+sxhkd &
+
+# Left monitor gets desktops 1, 2, 3 and right gets 4, 5, and 6.
+bspc monitor DVI-I-1 -d I II III
+bspc monitor DP-5 -d IV V VI
+
+# Gaps
+bspc config border_width         1
+bspc config window_gap           0
+bspc config split_ratio          0.5
+bspc config borderless_monocle   true
+bspc config gapless_monocle      true
+
+# Misc rules
+bspc rule -a Steam state=floating center=true
+bspc rule -a Gimp state=floating follow=on
+bspc rule -a Peek state=floating
+bspc rule -a MEGAsync state=floating
+bspc rule -a Plank layer=above manage=on border=off focus=off locked=on
+bspc rule -a Rofi layer=above manage=on border=off focus=off locked=on
+bspc rule -a "Minecraft Launcher" state=floating
+
+# Feh is for my desktop background
+bspc rule -a feh state=floating follow=on
+feh --bg-fill /home/$USER/Pictures/Wallpaper/background.png &
+
+# Display Colors and GPU OC
+nvidia-settings -l &
+gwe --hide-window &
+
+# Polybar and Plank
+polybar main -c /home/$USER/.config/polybar/config.ini &
+plank &
+
+# Polkit and gnome-keyring for running apps as as root and NextCloud.
+/usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1 &
+gnome-keyring-daemon -r &
+
+# VNC
+#x11vnc -display :0 -auth ~/.Xauthority -ncache 10 -usepw -forever -o ~/.vnc/vncserver.log -bg &
+
+# Corsair Mouse RGB Control
+ckb-next -b &
+
+# NextCloud
+(wait 5 && nextcloud --background) &

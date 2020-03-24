@@ -1,36 +1,20 @@
-# systemconfigs
-The configs I use on my system. 
+# /u/llamasking's System Configs
+The magic files that stop my system from looking like garbage.
 
-## Conky
-The [Conky](https://github.com/brndnmtthws/conky) on the right of my system is built on ["Helix Conky"](https://www.deviantart.com/figman/art/Helix-Conky-204016625) by figman on DeviantArt
+**If you wanna make your system look like mine, just drop the contents of the config/ folder in your ~/.config/ and the etc/ folder in your /etc/.**
 
-The one on the left is the same deal, but this time it's showing system info.
+### GTK
+Color Theme: Materia Dark Compact. - [[GitHub]](https://github.com/nana-4/materia-theme)
 
-## Plank
-I use the Bytes Plank theme that comes with Plank. [Here's](https://github.com/erikdubois/plankthemes) a repo with a bunch of other themes that I haven't tried.
+Icon Theme: Papirus Dark. - [[GitHub]](https://github.com/PapirusDevelopmentTeam/papirus-icon-theme)
 
-Settings of possible importance:
+Cursor Theme: OpenZone Ice. - [[GitHub]](https://github.com/ducakar/openzone-cursors)
 
-```
-Icon Size: 46
-Hide: On / Autohide
-Hide delay: 150
-Shot Unpinned: True
-```
+### Plank
+I use the Bytes theme ~~that comes with Plank~~. - [[OpenDesktop]](https://www.opendesktop.org/p/999999/)
 
-## Plasma
-```
-Look and Feel: Sweet (Sets lots of other settings.)
-Cursors: Win8
-Splash Screen: Breeze
-Icons: Papirus Dark
-Emoticons: EmojiOne
-Kvantum: Sweet
-GTK: Breeze-Dark
-```
+### Polybar
+My config is a modified Polybar-4 by adi1090x. - [[GitHub]](https://github.com/adi1090x/polybar-themes) 
 
-## Polybar
-My [Polybar](https://github.com/jaagr/polybar) config is based on adi1090x's [Polybar-2 Grey](https://github.com/adi1090x/polybar-themes) just modified to my personal liking.
-
-## Zsh
-Regular old [oh-my-zsh](https://github.com/robbyrussell/oh-my-zsh) theme. Theme's agnoster and the plugins I have loaded are git, adb, colored-man-pages, and cp.
+### Rofi
+Based on quebin31's rofi theme but without using the whole screen and some other small changes. [[GitLab]](https://gitlab.com/quebin31/dotfiles)
