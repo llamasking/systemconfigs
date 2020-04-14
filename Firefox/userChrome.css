@@ -18,6 +18,12 @@ The code is somewhat messy but I won't bother cleaning it as long as everything 
 
 /* Variables */
 html#main-window {
+	--color-bg: #1c1c1c;
+	--color-hover: #242424;
+	--color-selected: #2c2c2c;
+	--close-button-opacity-nonhover: 0.1;
+	--transition-speed: 0.3s;
+
 	/* Absurd variables used for testing */
 	/*
 	--color-bg: gray;
@@ -27,22 +33,13 @@ html#main-window {
 	--transition-speed: 3s;
 	*/
 
-	--color-bg: #1c1c1c;
-	--color-hover: #242424;
-	--color-selected: #2c2c2c;
-	--close-button-opacity-nonhover: 0.1;
-	--transition-speed: 0.3s;
-
 	--gap-between-tabs: 0px;
-	--margin-after-tab-list: 0x;
-	--margin-before-tab-list: 0px;
 	--tab-font-size: 8.5pt;
 	--tab-font-weight: 250;
 	--tab-font-selected-weight: 350;
 	--tab-height: 33px;
 
 	--urlbar-height: 33px;
-	--urlbar-container-margin: 0px;
 	--urlbar-text-size: 8pt;
 	--urlbar-text-weight: 325;
 
