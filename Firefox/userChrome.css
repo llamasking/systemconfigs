@@ -1,0 +1,288 @@
+/*Llamasking's userChrome.css
+
+Based upon /u/el013/'s "Ultra Minimal One Line userChrome" but cleaned up a little bit and with some changes I don't remember to make it slightly better.
+/r/FirefoxCSS thread: https://www.reddit.com/r/FirefoxCSS/comments/g0o4sg/ultra_minimal_one_line_userchrome_macos_firefox/
+
+===========================
+Original description:
+
+This is my very minimalistic One Line userChrome.
+
+Most of the code is heavily based on https://github.com/mut-ex/minimal-functional-fox and https://gist.github.com/Cl3m3nt1n4/6c678228ddefc543d005922fedfb004c
+Huge thanks to /u/Cl3m3nt1n4 and /u/_mutex_!
+
+The code is somewhat messy but I won't bother cleaning it as long as everything works. Colors are easily changed by editing variables near the bottom of the file.
+*/
+
+/* ONE LINE STUFF */
+/* Buttons, URL Status Panel */
+#PanelUI-button {
+	display: block !important;
+	position: fixed !important;
+	right: 0px !important; /*close/max/min placement*/
+	padding-top: 2px !important;
+}
+
+#alltabs-button {
+	position: fixed !important;
+	left: -1px !important;
+	padding-right: 28px !important; /*close/max/min placement*/
+}
+
+/* Navigation Bar */
+#nav-bar {
+	margin-top: -33px !important;
+	margin-right: 70vw !important;
+	height: 33px !important;
+	padding-top: 0px !important;
+	padding-left: 0px !important;
+}
+
+#nav-bar-customization-target,
+.chromeclass-toolbar-additional {
+	margin-top: -1px !important;
+}
+
+overflow-button {
+	padding-bottom: 2px !important;
+}
+
+:root[sizemode="fullscreen"] #nav-bar {
+	padding-left: 0px !important;
+}
+
+/* Titlebar */
+.titlebar-placeholder {
+	border: none !important;
+}
+
+#titlebar {
+	background-color: var(--color-bg) !important;
+}
+
+#navigator-toolbox {
+	border-bottom: none !important;
+}
+
+/* Urlbar */
+#urlbar[breakout][breakout-extend] {
+	top: calc((var(--urlbar-toolbar-height) - var(--urlbar-height)) / 2) !important;
+	left: 0 !important;
+	width: 100% !important;
+}
+
+#urlbar[breakout][breakout-extend]>#urlbar-input-container {
+	height: var(--urlbar-height) !important;
+	padding-block: 0px !important;
+	padding-inline: 0px !important;
+}
+
+#urlbar-container {
+	margin-top: 1px !important;
+	max-width: 950px !important;
+	min-width: 150px !important;
+}
+
+#tracking-protection-icon-container {
+	margin-left: -3px !important;
+	margin-right: -12px !important;
+	border-image-slice: 0 !important;
+}
+
+#reload-button {
+	margin-right: -7px !important;
+}
+
+/* Bookmark Bar */
+#PlacesToolbarItems {
+	margin-top: 1px !important;
+	-moz-box-pack: center;
+}
+
+/* Tabs */
+#tabs-newtab-button {
+	padding-right: 28px !important; /*close/max/min placement*/
+}
+
+#TabsToolbar {
+	margin-left: 30vw !important;
+	margin-right: 28px !important;
+}
+
+.tabbrowser-tab::after {
+	display: none !important;
+}
+
+#TabsToolbar .private-browsing-indicator {
+	margin-right: 28px !important; /*close/max/min placement*/
+}
+
+/* OTHER VISUAL CHANGES */
+/* Hide some bloat */
+.tab-close-button,
+.tab-line,
+.tabbrowser-tab::before,
+.tabbrowser-tab::after,
+.tabbrowser-tab .tab-icon-image {
+	display: none !important;
+}
+
+/* Hide bookmark icon */
+.urlbarView-type-icon {
+	display: none
+}
+
+/* Don't indent urls */
+.urlbarView.megabar .urlbarView-results[wrap] > .urlbarView-row[has-url] > .urlbarView-row-inner > .urlbarView-url {
+	padding-inline-start: revert !important;
+}
+
+/* Hide back and forward buttons */
+#back-button,
+#forward-button{
+	display: none !important;
+}
+
+/* Hide more stuff */
+.urlbarView-favicon,
+.urlbar-history-dropmarker,
+#star-button,
+#pocket-button,
+#identity-box {
+	display: none !important;
+}
+
+#tracking-protection-icon-container,
+#tracking-protection-icon-container:hover,
+#urlbar-search-button {
+	background-color: none !important;
+	background-image: none !important;
+	border: none !important;
+}
+
+/* Hide min, max and close buttons and some spacers */
+#tabs-newtab-button,
+.titlebar-buttonbox-container,
+.titlebar-buttonbox,
+.titlebar-spacer[type="pre-tabs"],
+.titlebar-spacer[type="post-tabs"]{
+	display: none !important;
+}
+
+/* Regular browser tabs */
+.tabbrowser-tab {
+	background-color: var(--color-bg) !important;
+	margin-inline-end: var(--gap-between-tabs) !important;
+	max-height: var(--tab-height) !important;
+	min-height: var(--tab-height) !important;
+	font-size: var(--tab-font-size) !important;
+	font-weight: var(--tab-font-weight) !important;
+}
+
+.tabbrowser-tab:hover {
+	background-color: none !important;
+	font-size: var(--tab-font-size) !important;
+	font-weight: var(--tab-font-weight) !important;
+}
+
+.tabbrowser-tab[selected="true"] {
+	background-color: var(--color-selected) !important;
+	font-size: var(--tab-font-size) !important;
+	font-weight: var(--tab-font-selected-weight) !important;
+}
+
+.tab-content {
+	background-color: none !important;
+	background-image: none !important;
+}
+
+/* Pinned tabs */
+.tabbrowser-tab[pinned="true"] {
+	max-width: var(--tab-height) !important;
+	min-width: var(--tab-height) !important;
+}
+
+.tabbrowser-tab[pinned="true"] .tab-icon-image {
+	align-items: center !important;
+	display: inline-block !important;
+	min-height: var(--pinned-tab-favicon-dim) !important;
+	min-width: var(--pinned-tab-favicon-dim) !important;
+}
+
+.tabbrowser-tab[pinned="true"] .tab-label-container {
+	display: none !important;
+}
+
+.tab-stack {
+	display: flex !important;
+	justify-content: center !important;
+}
+
+/* Hacky way to make the url input bar centered */
+input#urlbar-input {
+	caret-color: transparent !important;
+	font-family: var(--urlbar-text-font) !important;
+	font-size: var(--urlbar-text-size) !important;
+	font-weight: var(--urlbar-text-weight) !important;
+	text-align: left !important;
+	padding-left: 10px !important;
+	width: 99999px !important;
+}
+
+.browser-toolbar:not(.titlebar-color) {
+	background-color: var(--color-bg) !important;
+}
+
+@namespace url("http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul");
+
+:root {
+	--in-content-page-background: var(--color-bg);
+}
+
+/*changes "flash" on tab open color*/
+#browser vbox#appcontent tabbrowser,
+#content,
+#tabbrowser-tabpanels,
+browser[type=content-primary],
+browser[type=content] > html {
+	background: var(--in-content-page-background)!important;
+}
+
+/* Variables */
+html#main-window {
+	--color-bg: #1c1c1c;
+	--color-selected: #2c2c2c;
+	--toolbar-bgcolor: #1d1d1d !important;
+
+	--gap-between-tabs: 0px;
+	--margin-after-tab-list: 0x;
+	--margin-before-tab-list: 0px;
+	--tab-font-size: 8.5pt;
+	--tab-font-weight: 250;
+	--tab-font-selected-weight: 350;
+	--tab-height: 33px;
+
+	--urlbar-height: 33px;
+	--urlbar-container-margin: 0px;
+	--urlbar-text-size: 8pt;
+	--urlbar-text-weight: 325;
+
+	/* Firefox variables */
+	--lwt-toolbar-field-focus-color: #fefefa !important;
+	--lwt-toolbar-field-color: #fefefa !important;
+	--lwt-toolbar-field-background-color: var(--color-bg) !important;
+	--lwt-toolbar-field-border-color: var(--color-bg) !important;
+	--lwt-toolbar-field-focus-background-color: #1d1d1d !important;
+}
+
+/* Clean new urlbar */
+#urlbar #urlbar-background {
+	background-color: var(--color-bg) !important;
+	border: none !important;
+	box-shadow: none !important;
+}
+
+#urlbar[focused=true] {
+	background-color: var(--color-bg) !important;
+	border: none !important;
+}
