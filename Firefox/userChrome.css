@@ -18,10 +18,20 @@ The code is somewhat messy but I won't bother cleaning it as long as everything 
 
 /* Variables */
 html#main-window {
+	/* Absurd variables used for testing */
+	/*
+	--color-bg: gray;
+	--color-hover: orangered;
+	--color-selected: mediumturquoise;
+	--close-button-opacity-nonhover: 0.5;
+	--transition-speed: 3s;
+	*/
+
 	--color-bg: #1c1c1c;
 	--color-hover: #242424;
 	--color-selected: #2c2c2c;
-	--toolbar-bgcolor: #1d1d1d !important;
+	--close-button-opacity-nonhover: 0.1;
+	--transition-speed: 0.3s;
 
 	--gap-between-tabs: 0px;
 	--margin-after-tab-list: 0x;
@@ -42,6 +52,11 @@ html#main-window {
 	--lwt-toolbar-field-background-color: var(--color-bg) !important;
 	--lwt-toolbar-field-border-color: var(--color-bg) !important;
 	--lwt-toolbar-field-focus-background-color: #1d1d1d !important;
+}
+
+/* Possible fix for /u/levialegjobb's issue: https://www.reddit.com/r/FirefoxCSS/comments/g0o4sg/ultra_minimal_one_line_userchrome_macos_firefox/fnelkwg/ */
+scrollbox {
+	background: none !important;
 }
 
 /* ONE LINE STUFF */
@@ -155,8 +170,8 @@ padding-bottom: 2px !important;
 
 /* Make close button visible on hover */
 .tab-close-button {
-	opacity: 0;
-	transition: ease 0.15s !important;
+	opacity: var(--close-button-opacity-nonhover);
+	transition: all var(--transition-speed) ease !important;
 	position: fixed;
 	right: 0;
 }
@@ -221,6 +236,7 @@ padding-bottom: 2px !important;
 	background-color: var(--color-hover) !important;
 	font-size: var(--tab-font-size) !important;
 	font-weight: var(--tab-font-weight) !important;
+	transition: all var(--transition-speed) ease !important;
 }
 
 .tabbrowser-tab[selected="true"] {
