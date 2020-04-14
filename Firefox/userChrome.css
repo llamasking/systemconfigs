@@ -1,8 +1,10 @@
-/*Llamasking's userChrome.css
+/*
+/u/llamasking's Firefox userChrome.css
 
 Based upon /u/el013/'s "Ultra Minimal One Line userChrome" but cleaned up a little bit and with some changes I don't remember to make it slightly better.
 /r/FirefoxCSS thread: https://www.reddit.com/r/FirefoxCSS/comments/g0o4sg/ultra_minimal_one_line_userchrome_macos_firefox/
 
+I also moved the variables to the top so that this is easier to edit.
 ===========================
 Original description:
 
@@ -14,19 +16,48 @@ Huge thanks to /u/Cl3m3nt1n4 and /u/_mutex_!
 The code is somewhat messy but I won't bother cleaning it as long as everything works. Colors are easily changed by editing variables near the bottom of the file.
 */
 
+/* Variables */
+html#main-window {
+	--color-bg: #1c1c1c;
+	--color-hover: #242424;
+	--color-selected: #2c2c2c;
+	--toolbar-bgcolor: #1d1d1d !important;
+
+	--gap-between-tabs: 0px;
+	--margin-after-tab-list: 0x;
+	--margin-before-tab-list: 0px;
+	--tab-font-size: 8.5pt;
+	--tab-font-weight: 250;
+	--tab-font-selected-weight: 350;
+	--tab-height: 33px;
+
+	--urlbar-height: 33px;
+	--urlbar-container-margin: 0px;
+	--urlbar-text-size: 8pt;
+	--urlbar-text-weight: 325;
+
+	/* Firefox variables */
+	--lwt-toolbar-field-focus-color: #fefefa !important;
+	--lwt-toolbar-field-color: #fefefa !important;
+	--lwt-toolbar-field-background-color: var(--color-bg) !important;
+	--lwt-toolbar-field-border-color: var(--color-bg) !important;
+	--lwt-toolbar-field-focus-background-color: #1d1d1d !important;
+}
+
 /* ONE LINE STUFF */
 /* Buttons, URL Status Panel */
 #PanelUI-button {
 	display: block !important;
 	position: fixed !important;
-	right: 0px !important; /*close/max/min placement*/
+	right: -5px !important; /*close/max/min placement*/
 	padding-top: 2px !important;
+	border: none !important;
 }
 
 #alltabs-button {
 	position: fixed !important;
 	left: -1px !important;
-	padding-right: 28px !important; /*close/max/min placement*/
+	padding-right: 2px !important; /*close/max/min placement*/
 }
 
 /* Navigation Bar */
@@ -44,7 +75,7 @@ The code is somewhat messy but I won't bother cleaning it as long as everything 
 }
 
 overflow-button {
-	padding-bottom: 2px !important;
+padding-bottom: 2px !important;
 }
 
 :root[sizemode="fullscreen"] #nav-bar {
@@ -109,22 +140,29 @@ overflow-button {
 	margin-right: 28px !important;
 }
 
-.tabbrowser-tab::after {
-	display: none !important;
-}
-
 #TabsToolbar .private-browsing-indicator {
 	margin-right: 28px !important; /*close/max/min placement*/
 }
 
 /* OTHER VISUAL CHANGES */
 /* Hide some bloat */
-.tab-close-button,
 .tab-line,
 .tabbrowser-tab::before,
 .tabbrowser-tab::after,
 .tabbrowser-tab .tab-icon-image {
 	display: none !important;
+}
+
+/* Make close button visible on hover */
+.tab-close-button {
+	opacity: 0;
+	transition: ease 0.15s !important;
+	position: fixed;
+	right: 0;
+}
+
+.tab-close-button:hover {
+	opacity: 1;
 }
 
 /* Hide bookmark icon */
@@ -180,7 +218,7 @@ overflow-button {
 }
 
 .tabbrowser-tab:hover {
-	background-color: none !important;
+	background-color: var(--color-hover) !important;
 	font-size: var(--tab-font-size) !important;
 	font-weight: var(--tab-font-weight) !important;
 }
@@ -246,33 +284,6 @@ input#urlbar-input {
 browser[type=content-primary],
 browser[type=content] > html {
 	background: var(--in-content-page-background)!important;
-}
-
-/* Variables */
-html#main-window {
-	--color-bg: #1c1c1c;
-	--color-selected: #2c2c2c;
-	--toolbar-bgcolor: #1d1d1d !important;
-
-	--gap-between-tabs: 0px;
-	--margin-after-tab-list: 0x;
-	--margin-before-tab-list: 0px;
-	--tab-font-size: 8.5pt;
-	--tab-font-weight: 250;
-	--tab-font-selected-weight: 350;
-	--tab-height: 33px;
-
-	--urlbar-height: 33px;
-	--urlbar-container-margin: 0px;
-	--urlbar-text-size: 8pt;
-	--urlbar-text-weight: 325;
-
-	/* Firefox variables */
-	--lwt-toolbar-field-focus-color: #fefefa !important;
-	--lwt-toolbar-field-color: #fefefa !important;
-	--lwt-toolbar-field-background-color: var(--color-bg) !important;
-	--lwt-toolbar-field-border-color: var(--color-bg) !important;
-	--lwt-toolbar-field-focus-background-color: #1d1d1d !important;
 }
 
 /* Clean new urlbar */
