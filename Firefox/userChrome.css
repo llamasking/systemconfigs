@@ -48,7 +48,7 @@ html#main-window {
 	--lwt-toolbar-field-color: #fefefa !important;
 	--lwt-toolbar-field-background-color: var(--color-bg) !important;
 	--lwt-toolbar-field-border-color: var(--color-bg) !important;
-	--lwt-toolbar-field-focus-background-color: #1d1d1d !important;
+	--lwt-toolbar-field-focus-background-color: var(--color-bg) !important;
 }
 
 /* Possible fix for /u/levialegjobb's issue: https://www.reddit.com/r/FirefoxCSS/comments/g0o4sg/ultra_minimal_one_line_userchrome_macos_firefox/fnelkwg/ */
