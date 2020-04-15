@@ -4,8 +4,14 @@ Based upon /u/el013/'s "Ultra Minimal One Line userChrome" but cleaned up a litt
 Of course, if you have any issues with this theme, just let me know somehow and I'll get to it.
 
 ## Changelog:
-
 **Update [latest]:**
+ * When selecting multiple tabs, all tabs are now the selected color
+ * Fix tab colors being wrong
+ * Fix tab color transition not working
+ * Slightly lighten selected and hover colors
+ * Move lots of code related to hiding shit into one pile at the bottom
+
+**Update [7c505dd]:**
  * Make the container text on the url bar smaller and not colored
 
 **Update [009fe21]:**
@@ -17,7 +23,7 @@ Of course, if you have any issues with this theme, just let me know somehow and 
  * Remove unnecessary code and reorganize rest
  * Add and rewrite lots and lots of comments
 
-**Update [49f1ff5 / 7792e7a]:**
+**Update [7792e7a]:**
  * Possible fix for the top right corner being a wrong color when no tabs occupt that space
  * Hovering over a tab now has a transition rather than an immediate color change
  * Add more variables and remove some unused ones
