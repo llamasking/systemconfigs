@@ -19,8 +19,8 @@ The code is somewhat messy but I won't bother cleaning it as long as everything 
 /* Variables */
 html#main-window {
 	--color-bg: #1c1c1c;
-	--color-hover: #242424;
-	--color-selected: #2c2c2c;
+	--color-hover: #252525;
+	--color-selected: #33333;
 	--close-button-opacity-nonhover: 0.2;
 	--transition-speed: 0.3s;
 
@@ -159,14 +159,6 @@ input#urlbar-input {
 	margin-right: 28px !important;
 }
 
-/* Hide the line on top, the separator lines on either side of a tab, and the favicon. */
-.tab-line,
-.tabbrowser-tab::before,
-.tabbrowser-tab::after,
-.tabbrowser-tab .tab-icon-image {
-	display: none !important;
-}
-
 /* Make close and audio buttons partially visible unless hovered over */
 .tab-icon-sound,
 .tab-close-button {
@@ -181,36 +173,9 @@ input#urlbar-input {
 	opacity: 1 !important;
 }
 
-/* Hide bookmark icon in urlbar autocomplete */
-.urlbarView-type-icon {
-	display: none
-}
-
 /* Don't indent urls */
 .urlbarView.megabar .urlbarView-results[wrap] > .urlbarView-row[has-url] > .urlbarView-row-inner > .urlbarView-url {
 	padding-inline-start: revert !important;
-}
-
-/* Hide back and forward buttons */
-#back-button,
-#forward-button {
-	display: none !important;
-}
-
-/* Hide bookmark icon as a whole, pocket, the https lock icon, and one thing I don't know. */
-.urlbar-history-dropmarker,
-#star-button,
-#pocket-button,
-#identity-box {
-	display: none !important;
-}
-
-/* Hide min, max and close buttons and some spacers */
-.titlebar-buttonbox-container,
-.titlebar-buttonbox,
-.titlebar-spacer[type="pre-tabs"],
-.titlebar-spacer[type="post-tabs"]{
-	display: none !important;
 }
 
 /* Regular Browser Tabs */
@@ -221,6 +186,7 @@ input#urlbar-input {
 	min-height: var(--tab-height) !important;
 	font-size: var(--tab-font-size) !important;
 	font-weight: var(--tab-font-weight) !important;
+	transition: all var(--transition-speed) ease !important;
 }
 
 /* Hovered Browser Tabs */
@@ -228,11 +194,12 @@ input#urlbar-input {
 	background-color: var(--color-hover) !important;
 	font-size: var(--tab-font-size) !important;
 	font-weight: var(--tab-font-weight) !important;
-	transition: all var(--transition-speed) ease !important;
 }
 
 /* Selected Browser Tabs */
-.tabbrowser-tab[selected="true"] {
+.tabbrowser-tab[selected="true"],
+.tabbrowser-tab[multiselected],
+.tabbrowser-tab[visuallyselected="true"] {
 	background-color: var(--color-selected) !important;
 	font-size: var(--tab-font-size) !important;
 	font-weight: var(--tab-font-selected-weight) !important;
@@ -253,11 +220,6 @@ input#urlbar-input {
 
 .tabbrowser-tab[pinned="true"] .tab-label-container {
 	display: none !important;
-}
-
-/* Make container line invisible */
-.tab-bottom-line {
-  display: none !important;
 }
 
 /* Make the container text on the url bar smaller and not colored */
@@ -286,4 +248,42 @@ browser[type=content] > html {
 
 .browser-toolbar:not(.titlebar-color) {
 	background-color: var(--color-bg) !important;
+}
+
+/* Hide lots of shit:
+ * Back and Forward buttons,
+ * Bookmark button,
+ * Pocket button,
+ * HTTPS icon,
+ * Bookmark icon from autocompleted links,
+ * I don't actually know this one,
+ * I think this one shows your picture when logged into Sync,
+ * Some history button,
+ * Minimize, Maximize, and Close Buttons,
+ * Tab spacers,
+ * An annoying "tab background" that is just in the way,
+ * The colored line on top of a tab,
+ * The colored line when in a containered tab,
+ * The tab seperators on either side of a tab,
+ * Favicons.
+ */
+
+#back-button,
+#forward-button,
+#star-button,
+#pocket-button,
+#identity-box,
+.urlbarView-type-icon,
+.urlbar-history-dropmarker,
+.titlebar-buttonbox-container,
+.titlebar-buttonbox,
+.titlebar-spacer[type="pre-tabs"],
+.titlebar-spacer[type="post-tabs"],
+.tab-background,
+.tab-line,
+.tab-bottom-line,
+.tabbrowser-tab::before,
+.tabbrowser-tab::after,
+.tabbrowser-tab .tab-icon-image {
+	display: none !important;
 }
