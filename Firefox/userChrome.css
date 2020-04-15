@@ -83,7 +83,7 @@ scrollbox {
 
 /* Overflow Button: The one where you hide the extensions */
 overflow-button {
-  padding-bottom: 2px !important;
+	padding-bottom: 2px !important;
 }
 
 /* Titlebar: The one where all the tabs go */
