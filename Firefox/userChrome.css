@@ -44,8 +44,8 @@ html#main-window {
 	--urlbar-text-weight: 325;
 
 	/* Firefox variables */
-	--lwt-toolbar-field-focus-color: #fefefa !important;
 	--lwt-toolbar-field-color: #fefefa !important;
+	--lwt-toolbar-field-focus-color: var(--lwt-toolbar-field-color) !important;
 	--lwt-toolbar-field-background-color: var(--color-bg) !important;
 	--lwt-toolbar-field-border-color: var(--color-bg) !important;
 	--lwt-toolbar-field-focus-background-color: var(--color-bg) !important;
@@ -260,14 +260,12 @@ input#urlbar-input {
   display: none !important;
 }
 
-.browser-toolbar:not(.titlebar-color) {
-	background-color: var(--color-bg) !important;
-}
-
-@namespace url("http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul");
-
-:root {
-	--in-content-page-background: var(--color-bg);
+/* Make the container text on the url bar smaller and not colored */
+#userContext-icons {
+	scale: 80%;
+	margin: -1px !important;
+	--identity-tab-color: #ccc !important;
+	--identity-icon-color: #ccc !important;
 }
 
 /* Changes "flash" when opening a new tab */
@@ -277,4 +275,15 @@ input#urlbar-input {
 browser[type=content-primary],
 browser[type=content] > html {
 	background: var(--in-content-page-background)!important;
+}
+
+/* I don't fucking know what this shit does but it looks important. */
+@namespace url("http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul");
+
+:root {
+	--in-content-page-background: var(--color-bg);
+}
+
+.browser-toolbar:not(.titlebar-color) {
+	background-color: var(--color-bg) !important;
 }

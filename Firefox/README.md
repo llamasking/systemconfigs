@@ -5,7 +5,10 @@ Of course, if you have any issues with this theme, just let me know somehow and 
 
 ## Changelog:
 
-**Update: [latest]:**
+**Update [latest]:**
+ * Make the container text on the url bar smaller and not colored
+
+**Update [009fe21]:**
  * Close tab and audio buttons are on the right side of the tab and the title is on the left, like default.
  * Audio button is now partially visible until hovered over, like close tab button
  * Ever so slightly increased opacity on non-hovered audio and close tab buttons
