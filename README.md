@@ -3,11 +3,19 @@ The magic files that stop my system from looking like garbage.
 
 ### Firefox
 Based upon /u/el013/'s "Ultra Minimal One Line userChrome" but cleaned up a little bit and with some changes to make it appeal to me more. [[/r/FirefoxCSS thread]](https://www.reddit.com/r/FirefoxCSS/comments/g0o4sg/ultra_minimal_one_line_userchrome_macos_firefox/)
+
+ * Close tab and audio buttons are now slightly visible and become fully visible on hover.
+ * Tabs are more like default, with text alligned left and buttons on right.
  * Removed the indent on urls when typing in nav bar.
  * Removed bookmark icon from url completion.
+ * Readded favicons in url completion.
+ * Caret is back in the url bar.
  * Text in nav bar alligns left rather than to center.
  * Selected tab is a different color from the rest.
+ * Hovering over a tab gives it a different color, too.
  * about:blank is now dark.
+ * More variables for more customization.
+ * Significantly cleaned up code compared to original.
  * Maybe more. I dunno. I tried this and that but never wrote what stuck.
 
 ### GTK

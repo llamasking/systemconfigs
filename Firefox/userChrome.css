@@ -21,7 +21,7 @@ html#main-window {
 	--color-bg: #1c1c1c;
 	--color-hover: #242424;
 	--color-selected: #2c2c2c;
-	--close-button-opacity-nonhover: 0.1;
+	--close-button-opacity-nonhover: 0.2;
 	--transition-speed: 0.3s;
 
 	/* Absurd variables used for testing */
@@ -56,23 +56,23 @@ scrollbox {
 	background: none !important;
 }
 
-/* ONE LINE STUFF */
-/* Buttons, URL Status Panel */
+/* Menu Button: The somewhat important button that nobody thinks about */
 #PanelUI-button {
 	display: block !important;
 	position: fixed !important;
-	right: -5px !important; /*close/max/min placement*/
+	right: 0px !important;
 	padding-top: 2px !important;
 	border: none !important;
 }
 
+/* All Tabs Button: The one that you see if you want to murder your poor ram */
 #alltabs-button {
 	position: fixed !important;
 	left: -1px !important;
-	padding-right: 2px !important; /*close/max/min placement*/
+	padding-right: 2px !important;
 }
 
-/* Navigation Bar */
+/* Navigation Bar Includes Everything to Left of Tabs */
 #nav-bar {
 	margin-top: -33px !important;
 	margin-right: 70vw !important;
@@ -81,33 +81,22 @@ scrollbox {
 	padding-left: 0px !important;
 }
 
-#nav-bar-customization-target,
-.chromeclass-toolbar-additional {
-	margin-top: -1px !important;
-}
-
+/* Overflow Button: The one where you hide the extensions */
 overflow-button {
-padding-bottom: 2px !important;
+  padding-bottom: 2px !important;
 }
 
-:root[sizemode="fullscreen"] #nav-bar {
-	padding-left: 0px !important;
-}
-
-/* Titlebar */
-.titlebar-placeholder {
-	border: none !important;
-}
-
+/* Titlebar: The one where all the tabs go */
 #titlebar {
 	background-color: var(--color-bg) !important;
 }
 
+/* Removes a one pixel black line from the entire "navigator toolbox" (that's the entire top bar thing). */
 #navigator-toolbox {
 	border-bottom: none !important;
 }
 
-/* Urlbar */
+/* Urlbar: The one where the long computery bits go */
 #urlbar[breakout][breakout-extend] {
 	top: calc((var(--urlbar-toolbar-height) - var(--urlbar-height)) / 2) !important;
 	left: 0 !important;
@@ -126,38 +115,51 @@ padding-bottom: 2px !important;
 	min-width: 150px !important;
 }
 
+#urlbar #urlbar-background {
+	background-color: var(--color-bg) !important;
+	border: none !important;
+	box-shadow: none !important;
+}
+
+input#urlbar-input {
+	caret-color: var(--lwt-toolbar-field-focus-color) !important;
+	font-family: var(--urlbar-text-font) !important;
+	font-size: var(--urlbar-text-size) !important;
+	font-weight: var(--urlbar-text-weight) !important;
+	padding-left: 10px !important;
+	width: 99999px !important;
+}
+
+/* Tracking Protectiong: The one that protects you from tracking */
 #tracking-protection-icon-container {
 	margin-left: -3px !important;
 	margin-right: -12px !important;
-	border-image-slice: 0 !important;
+	border: none !important;
 }
 
+/* Reload: The one for when you fuck up in inspect element */
 #reload-button {
 	margin-right: -7px !important;
 }
 
-/* Bookmark Bar */
+/* Bookmark Bar: The one bar that doesn't need to exist */
 #PlacesToolbarItems {
 	margin-top: 1px !important;
 	-moz-box-pack: center;
 }
 
-/* Tabs */
+/* New Tab: The one button I don't use anymore */
 #tabs-newtab-button {
-	padding-right: 28px !important; /*close/max/min placement*/
+	padding: 1px 4px 0px 3px !important;
 }
 
+/* Tabs Toolbar: The one that's quite literally the whole fucking bar */
 #TabsToolbar {
 	margin-left: 30vw !important;
 	margin-right: 28px !important;
 }
 
-#TabsToolbar .private-browsing-indicator {
-	margin-right: 28px !important; /*close/max/min placement*/
-}
-
-/* OTHER VISUAL CHANGES */
-/* Hide some bloat */
+/* Hide the line on top, the separator lines on either side of a tab, and the favicon. */
 .tab-line,
 .tabbrowser-tab::before,
 .tabbrowser-tab::after,
@@ -165,19 +167,21 @@ padding-bottom: 2px !important;
 	display: none !important;
 }
 
-/* Make close button visible on hover */
+/* Make close and audio buttons partially visible unless hovered over */
+.tab-icon-sound,
 .tab-close-button {
-	opacity: var(--close-button-opacity-nonhover);
+	opacity: var(--close-button-opacity-nonhover) !important;
 	transition: all var(--transition-speed) ease !important;
 	position: fixed;
 	right: 0;
 }
 
-.tab-close-button:hover {
-	opacity: 1;
+.tab-close-button:hover,
+.tab-icon-sound:hover {
+	opacity: 1 !important;
 }
 
-/* Hide bookmark icon */
+/* Hide bookmark icon in urlbar autocomplete */
 .urlbarView-type-icon {
 	display: none
 }
@@ -189,12 +193,11 @@ padding-bottom: 2px !important;
 
 /* Hide back and forward buttons */
 #back-button,
-#forward-button{
+#forward-button {
 	display: none !important;
 }
 
-/* Hide more stuff */
-.urlbarView-favicon,
+/* Hide bookmark icon as a whole, pocket, the https lock icon, and one thing I don't know. */
 .urlbar-history-dropmarker,
 #star-button,
 #pocket-button,
@@ -202,16 +205,7 @@ padding-bottom: 2px !important;
 	display: none !important;
 }
 
-#tracking-protection-icon-container,
-#tracking-protection-icon-container:hover,
-#urlbar-search-button {
-	background-color: none !important;
-	background-image: none !important;
-	border: none !important;
-}
-
 /* Hide min, max and close buttons and some spacers */
-#tabs-newtab-button,
 .titlebar-buttonbox-container,
 .titlebar-buttonbox,
 .titlebar-spacer[type="pre-tabs"],
@@ -219,7 +213,7 @@ padding-bottom: 2px !important;
 	display: none !important;
 }
 
-/* Regular browser tabs */
+/* Regular Browser Tabs */
 .tabbrowser-tab {
 	background-color: var(--color-bg) !important;
 	margin-inline-end: var(--gap-between-tabs) !important;
@@ -229,6 +223,7 @@ padding-bottom: 2px !important;
 	font-weight: var(--tab-font-weight) !important;
 }
 
+/* Hovered Browser Tabs */
 .tabbrowser-tab:hover {
 	background-color: var(--color-hover) !important;
 	font-size: var(--tab-font-size) !important;
@@ -236,15 +231,11 @@ padding-bottom: 2px !important;
 	transition: all var(--transition-speed) ease !important;
 }
 
+/* Selected Browser Tabs */
 .tabbrowser-tab[selected="true"] {
 	background-color: var(--color-selected) !important;
 	font-size: var(--tab-font-size) !important;
 	font-weight: var(--tab-font-selected-weight) !important;
-}
-
-.tab-content {
-	background-color: none !important;
-	background-image: none !important;
 }
 
 /* Pinned tabs */
@@ -264,20 +255,9 @@ padding-bottom: 2px !important;
 	display: none !important;
 }
 
-.tab-stack {
-	display: flex !important;
-	justify-content: center !important;
-}
-
-/* Hacky way to make the url input bar centered */
-input#urlbar-input {
-	caret-color: transparent !important;
-	font-family: var(--urlbar-text-font) !important;
-	font-size: var(--urlbar-text-size) !important;
-	font-weight: var(--urlbar-text-weight) !important;
-	text-align: left !important;
-	padding-left: 10px !important;
-	width: 99999px !important;
+/* Make container line invisible */
+.tab-bottom-line {
+  display: none !important;
 }
 
 .browser-toolbar:not(.titlebar-color) {
@@ -290,23 +270,11 @@ input#urlbar-input {
 	--in-content-page-background: var(--color-bg);
 }
 
-/*changes "flash" on tab open color*/
+/* Changes "flash" when opening a new tab */
 #browser vbox#appcontent tabbrowser,
 #content,
 #tabbrowser-tabpanels,
 browser[type=content-primary],
 browser[type=content] > html {
 	background: var(--in-content-page-background)!important;
-}
-
-/* Clean new urlbar */
-#urlbar #urlbar-background {
-	background-color: var(--color-bg) !important;
-	border: none !important;
-	box-shadow: none !important;
-}
-
-#urlbar[focused=true] {
-	background-color: var(--color-bg) !important;
-	border: none !important;
 }
