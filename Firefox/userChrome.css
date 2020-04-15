@@ -20,7 +20,7 @@ The code is somewhat messy but I won't bother cleaning it as long as everything 
 html#main-window {
 	--color-bg: #1c1c1c;
 	--color-hover: #252525;
-	--color-selected: #33333;
+	--color-selected: #333333;
 	--close-button-opacity-nonhover: 0.2;
 	--transition-speed: 0.3s;
 
