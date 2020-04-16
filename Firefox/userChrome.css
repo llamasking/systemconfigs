@@ -303,9 +303,7 @@ browser[type=content] > html {
 	background: var(--in-content-page-background) !important;
 }
 
-/* I don't fucking know what this shit does but it looks important. */
-@namespace url("http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul");
-
+/* I don't know what this shit does but it looks important. */
 .browser-toolbar:not(.titlebar-color) {
 	background-color: var(--color-bg) !important;
 }
