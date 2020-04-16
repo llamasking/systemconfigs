@@ -5,6 +5,9 @@ Of course, if you have any issues with this theme, just let me know somehow and 
 
 ## Changelog:
 **Update [latest]:**
+ * Lots of pages like settings and addons are now dark
+
+**Update [6acfe51]:**
  * Update the fix for the top right black issue to maybe work
  * Synced tabs are now dark like everything else
  * Minor changes to the sidebar
