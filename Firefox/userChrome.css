@@ -1,7 +1,7 @@
 /*
 /u/llamasking's Firefox userChrome.css
 
-Based upon /u/el013/'s "Ultra Minimal One Line userChrome" but cleaned up a little bit and with some changes I don't remember to make it slightly better.
+Based upon /u/el013/'s "Ultra Minimal One Line userChrome" but cleaned up a little bit and with lots of changes to make it significantly better.
 /r/FirefoxCSS thread: https://www.reddit.com/r/FirefoxCSS/comments/g0o4sg/ultra_minimal_one_line_userchrome_macos_firefox/
 
 I also moved the variables to the top so that this is easier to edit.
@@ -17,7 +17,7 @@ The code is somewhat messy but I won't bother cleaning it as long as everything 
 */
 
 /* Variables */
-html#main-window {
+:root {
 	--color-bg: #1c1c1c;
 	--color-hover: #252525;
 	--color-selected: #333333;
@@ -44,16 +44,20 @@ html#main-window {
 	--urlbar-text-weight: 325;
 
 	/* Firefox variables */
+	/* NOTE TO SELF: https://developer.mozilla.org/en-US/docs/Mozilla/Add-ons/WebExtensions/manifest.json/theme */
 	--lwt-toolbar-field-color: #fefefa !important;
-	--lwt-toolbar-field-focus-color: var(--lwt-toolbar-field-color) !important;
-	--lwt-toolbar-field-background-color: var(--color-bg) !important;
-	--lwt-toolbar-field-border-color: var(--color-bg) !important;
+	--lwt-toolbar-field-focus: var(--color-selected) !important;
+	--lwt-toolbar-field-border-color: #666 !important;
 	--lwt-toolbar-field-focus-background-color: var(--color-bg) !important;
+	--lwt-toolbar-field-background-color: var(--color-hover) !important;
+	--toolbar-field-focus-border-color: var(--color-hover) !important;
+	--in-content-page-background: var(--color-bg) !important;
 }
 
-/* Possible fix for /u/levialegjobb's issue: https://www.reddit.com/r/FirefoxCSS/comments/g0o4sg/ultra_minimal_one_line_userchrome_macos_firefox/fnelkwg/ */
+/* Possible fix v2 for /u/levialegjobb's issue: https://www.reddit.com/r/FirefoxCSS/comments/g0o4sg/ultra_minimal_one_line_userchrome_macos_firefox/fnelkwg/ */
+#tabbrowser-tabs,
 scrollbox {
-	background: none !important;
+	background: var(--color-bg) !important;
 }
 
 /* Menu Button: The somewhat important button that nobody thinks about */
@@ -231,10 +235,27 @@ input#urlbar-input {
 	--identity-icon-color: #ccc !important;
 }
 
-/* Make the sidebar dark except synced tabs because I can't figure it out */
+/* Make the sidebar dark with bookmarks, history, and synced tabs */
 #sidebar-box,
-.sidebar-panel {
+.sidebar-panel,
+#template-container.content-scrollable {
 	background: var(--color-bg) !important;
+}
+
+.sidebar-splitter {
+	width: 1px !important;
+	border: 0 !important;
+	background: var(--color-hover) !important;
+}
+
+#sidebar-switcher-target {
+	background: none !important;
+	transition: all var(--transition-speed) ease !important;
+}
+
+#sidebar-switcher-target:hover {
+	background: var(--color-selected) !important;
+	transition: all var(--transition-speed) ease !important;
 }
 
 /* Make extension overflow menu dark */
@@ -252,6 +273,27 @@ input#urlbar-input {
 	transition: all var(--transition-speed) ease !important;
 }
 
+/* Make the find bar nice and dark */
+findbar {
+	background: var(--color-bg) !important;
+	border-top-color: var(--color-hover) !important;
+}
+
+.findbar-button,
+.findbar-find-next,
+.findbar-find-previous {
+  outline: 0 !important;
+	transition: all var(--transition-speed) ease !important;
+}
+
+.findbar-button:hover {
+	background: var(--color-hover) !important;
+}
+
+.findbar-button[checked="true"] {
+	background: var(--color-selected) !important;
+}
+
 /* Changes "flash" when opening a new tab */
 #browser vbox#appcontent tabbrowser,
 #content,
@@ -263,10 +305,6 @@ browser[type=content] > html {
 
 /* I don't fucking know what this shit does but it looks important. */
 @namespace url("http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul");
-
-:root {
-	--in-content-page-background: var(--color-bg);
-}
 
 .browser-toolbar:not(.titlebar-color) {
 	background-color: var(--color-bg) !important;

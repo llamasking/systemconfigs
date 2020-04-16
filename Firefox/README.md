@@ -5,6 +5,13 @@ Of course, if you have any issues with this theme, just let me know somehow and 
 
 ## Changelog:
 **Update [latest]:**
+ * Update the fix for the top right black issue to maybe work
+ * Synced tabs are now dark like everything else
+ * Minor changes to the sidebar
+ * The sidebar switcher now has a transition when hovering
+ * Make the find bar nice and dark
+
+**Update [bacd8c7]:**
  * Zoom indicator is now smaller, like the container text
  * Bookmarks and history in the sidebar is now dark. Can't figure out synced tabs
  * Make extension overflow menu dark
