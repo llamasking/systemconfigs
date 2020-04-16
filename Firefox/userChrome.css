@@ -222,12 +222,34 @@ input#urlbar-input {
 	display: none !important;
 }
 
-/* Make the container text on the url bar smaller and not colored */
-#userContext-icons {
+/* Make the container text on the url bar smaller and not colored. Make zoom indicator smaller, too. */
+#userContext-icons,
+#urlbar-zoom-button {
 	scale: 80%;
 	margin: -1px !important;
 	--identity-tab-color: #ccc !important;
 	--identity-icon-color: #ccc !important;
+}
+
+/* Make the sidebar dark except synced tabs because I can't figure it out */
+#sidebar-box,
+.sidebar-panel {
+	background: var(--color-bg) !important;
+}
+
+/* Make extension overflow menu dark */
+#widget-overflow-mainView {
+	background: var(--color-bg) !important;
+}
+
+#overflowMenu-customize-button {
+	background: var(--color-hover) !important;
+}
+
+#widget-overflow-fixed-list .toolbarbutton-1:hover,
+#overflowMenu-customize-button:hover {
+	background: var(--color-selected) !important;
+	transition: all var(--transition-speed) ease !important;
 }
 
 /* Changes "flash" when opening a new tab */
@@ -236,7 +258,7 @@ input#urlbar-input {
 #tabbrowser-tabpanels,
 browser[type=content-primary],
 browser[type=content] > html {
-	background: var(--in-content-page-background)!important;
+	background: var(--in-content-page-background) !important;
 }
 
 /* I don't fucking know what this shit does but it looks important. */

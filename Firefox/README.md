@@ -5,6 +5,11 @@ Of course, if you have any issues with this theme, just let me know somehow and 
 
 ## Changelog:
 **Update [latest]:**
+ * Zoom indicator is now smaller, like the container text
+ * Bookmarks and history in the sidebar is now dark. Can't figure out synced tabs
+ * Make extension overflow menu dark
+
+**Update [f84888f]:**
  * When selecting multiple tabs, all tabs are now the selected color
  * Fix tab colors being wrong
  * Fix tab color transition not working
@@ -15,7 +20,7 @@ Of course, if you have any issues with this theme, just let me know somehow and 
  * Make the container text on the url bar smaller and not colored
 
 **Update [009fe21]:**
- * Close tab and audio buttons are on the right side of the tab and the title is on the left, like default.
+ * Close tab and audio buttons are on the right side of the tab and the title is on the left, like default
  * Audio button is now partially visible until hovered over, like close tab button
  * Ever so slightly increased opacity on non-hovered audio and close tab buttons
  * Caret in URL bar is no longer invisible
