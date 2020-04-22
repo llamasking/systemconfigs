@@ -134,3 +134,10 @@ XF86Audio{Raise,Lower}Volume
 
 XF86AudioMute
 	amixer set Master toggle
+
+# Lock screen
+super + l
+	clearine
+
+super + shift + l
+	betterlockscreen -l blur

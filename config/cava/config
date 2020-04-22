@@ -54,8 +54,8 @@ framerate = 30
 ; method = alsa
 ; source = hw:Loopback,1
 
-; method = fifo
-; source = /tmp/mpd.fifo
+method = fifo
+source = /tmp/mpd.fifo
 
 
 
