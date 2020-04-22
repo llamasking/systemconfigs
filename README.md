@@ -6,6 +6,11 @@ Based upon /u/el013/'s "Ultra Minimal One Line userChrome" but cleaned up a litt
 
 Just changelog in the folder for the changes. The general theme is the same but I made a massive number of changes.
 
+## Images
+![Images of Desktop](./images/Desktop.jpg)
+
+## Changes
+
 ### GTK
 Color Theme: Materia Dark Compact. - [[GitHub]](https://github.com/nana-4/materia-theme)
 
