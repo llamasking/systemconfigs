@@ -130,25 +130,20 @@ input#urlbar-input {
 	font-family: var(--urlbar-text-font) !important;
 	font-size: var(--urlbar-text-size) !important;
 	font-weight: var(--urlbar-text-weight) !important;
-	padding-left: 10px !important;
 	width: 99999px !important;
 }
 
-/* Tracking Protectiong: The one that protects you from tracking */
-#tracking-protection-icon-container {
-	margin-left: -3px !important;
-	margin-right: -12px !important;
+/* Https Indicator: Please put in your credit card details. */
+#identity-box {
+	margin: -2px !important;
+	padding-bottom: 2px !important;
+	padding-right: 4px !important;
 	border: none !important;
-}
-
-/* Handles the theming of bookmark folders */
-.bookmark-item {
-	transition: all var(--transition-speed) ease !important;
 }
 
 /* Reload: The one for when you fuck up in inspect element */
 #reload-button {
-	margin-right: -7px !important;
+	margin-right: -6px !important;
 }
 
 /* Bookmark Bar: The one bar that doesn't need to exist */
@@ -166,6 +161,11 @@ input#urlbar-input {
 #TabsToolbar {
 	margin-left: 30vw !important;
 	margin-right: 28px !important;
+}
+
+/* Handles the theming of bookmark folders */
+.bookmark-item {
+	transition: all var(--transition-speed) ease !important;
 }
 
 /* Make close and audio buttons partially visible unless hovered over */
@@ -335,7 +335,7 @@ browser[type=content] > html {
 #forward-button,
 #star-button,
 #pocket-button,
-#identity-box,
+#tracking-protection-icon-container,
 .urlbarView-type-icon,
 .urlbar-history-dropmarker,
 .titlebar-buttonbox-container,

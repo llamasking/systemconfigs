@@ -5,6 +5,9 @@ Of course, if you have any issues with this theme, just let me know somehow and 
 
 ## Changelog:
 **Update [latest]:**
+ * Use the https indicator rather than tracking protection.
+
+**Update [6fec1e7]:**
  * Credit: An anonymous person: Animate bookmarks bar
 
 **Update [502ed4b]:**
