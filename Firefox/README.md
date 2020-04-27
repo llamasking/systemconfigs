@@ -5,6 +5,9 @@ Of course, if you have any issues with this theme, just let me know somehow and 
 
 ## Changelog:
 **Update [latest]:**
+ * Credit: An anonymous person: Animate bookmarks bar
+
+**Update [502ed4b]:**
  * Lots of pages like settings and addons are now dark
 
 **Update [6acfe51]:**

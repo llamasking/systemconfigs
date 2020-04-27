@@ -141,6 +141,11 @@ input#urlbar-input {
 	border: none !important;
 }
 
+/* Handles the theming of bookmark folders */
+.bookmark-item {
+	transition: all var(--transition-speed) ease !important;
+}
+
 /* Reload: The one for when you fuck up in inspect element */
 #reload-button {
 	margin-right: -7px !important;
