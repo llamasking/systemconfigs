@@ -54,12 +54,6 @@ The code is somewhat messy but I won't bother cleaning it as long as everything 
 	--in-content-page-background: var(--color-bg) !important;
 }
 
-/* Possible fix v2 for /u/levialegjobb's issue: https://www.reddit.com/r/FirefoxCSS/comments/g0o4sg/ultra_minimal_one_line_userchrome_macos_firefox/fnelkwg/ */
-#tabbrowser-tabs,
-scrollbox {
-	background: var(--color-bg) !important;
-}
-
 /* Menu Button: The somewhat important button that nobody thinks about */
 #PanelUI-button {
 	display: block !important;
@@ -195,7 +189,7 @@ input#urlbar-input {
 	min-height: var(--tab-height) !important;
 	font-size: var(--tab-font-size) !important;
 	font-weight: var(--tab-font-weight) !important;
-	transition: all var(--transition-speed) ease !important;
+	transition: background-color var(--transition-speed) ease !important;
 }
 
 /* Hovered Browser Tabs */
