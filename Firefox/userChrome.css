@@ -85,7 +85,8 @@ overflow-button {
 }
 
 /* Titlebar: The one where all the tabs go */
-#titlebar {
+#titlebar,
+#navigator-toolbox {
 	background-color: var(--color-bg) !important;
 }
 

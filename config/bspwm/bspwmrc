@@ -1,4 +1,4 @@
-#! /bin/sh
+#!/bin/sh
 
 # Start the basic things
 picom --experimental-backends &
@@ -18,15 +18,10 @@ bspc config gapless_monocle      true
 # Misc rules
 bspc rule -a Steam state=floating center=on
 bspc rule -a Gimp state=floating follow=on
-bspc rule -a Blender state=floating follow=on
 bspc rule -a Peek state=floating layer=above
 bspc rule -a MEGAsync state=floating
-bspc rule -a Plank layer=above manage=on border=off focus=off locked=on
+bspc rule -a Plank state=floating manage=on border=off focus=off locked=on
 bspc rule -a Rofi layer=above border=off focus=off locked=on
-bspc rule -a "Minecraft Launcher" state=floating
-
-# Fullscreen Source Games
-bspc rule -a hl2_linux state=fullscreen
 
 # Feh is for my desktop background
 bspc rule -a feh state=floating follow=on
