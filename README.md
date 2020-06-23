@@ -10,10 +10,10 @@ AUR: `rofi-git polybar picom-tyrone-git clearine-git`
 
 ## Installation
 
-1. Copy the contents of the `etc` folder to `/etc/.`
-2. Copy the `.config,` `.ncmpcpp,` `Pictures,` and `Script` folders to your home directory. Merge folders and replace files if asked.
+1. Copy the contents of the `etc` folder to `/etc/`.
+2. Copy the `.config`, `.ncmpcpp`, `Pictures`, and `Script`, folders to your home directory. Merge folders and replace files if asked.
 3. Copy the `.zshrc` file to your home directory, replacing the existing file if asked.
-4. Copy the contents of the `Firefox` folder to `~/.mozilla/firefox/<Your Profile>/chrome.` If the `chrome` folder doesn't exist, create it.
+4. Copy the contents of the `Firefox` folder to `~/.mozilla/firefox/<Your Profile>/chrome`. If the `chrome` folder doesn't exist, create it.
 
 ## Images
 
