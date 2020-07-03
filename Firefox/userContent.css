@@ -11,4 +11,11 @@ url-prefix(about:blank) {
   html {
     background: var(--in-content-page-background) !important;
   }
+
+}
+
+@-moz-document url-prefix(about:home) {
+  body {
+    --newtab-background-color: var(--in-content-page-background) !important;
+  }
 }
