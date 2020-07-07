@@ -3,7 +3,7 @@ header_window_color = "default"
 volume_color = "default"
 state_line_color = "9"
 alternative_header_first_line_format = "$b$1$aqqu$/a$9 $8{%t}|{%f} $1$atqq$/a$9$/b"
-alternative_header_second_line_format = "{{$(172)$b%a$/b$9}{ - $(84)%b$9}{ (%y$9)}}|{%D}"
+alternative_header_second_line_format = "{{$(172)$b%a$/b$9}{ (%y$9)}}|{%D}"
 
 [playlist]
 playlist_display_mode = "classic"
