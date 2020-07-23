@@ -16,10 +16,10 @@ bspc config borderless_monocle   true
 bspc config gapless_monocle      true
 
 # Misc rules
-bspc rule -a Steam state=floating center=on
+bspc rule -a Steam state=floating center=on			# Standard Steam Windows
+bspc rule -a steam state=floating layer=above border=off	# Big Picture and Controller Keyboard
 bspc rule -a Gimp state=floating follow=on
 bspc rule -a Peek state=floating layer=above
-bspc rule -a MEGAsync state=floating
 bspc rule -a Plank state=floating manage=on border=off focus=off locked=on
 bspc rule -a Rofi layer=above border=off focus=off locked=on
 
