@@ -1,0 +1,7 @@
+configuration {
+	show-icons: true;
+	terminal: "termite";
+	sidebar-mode: false;
+	theme: "material.rasi";
+	display-drun: "❱";
+}
