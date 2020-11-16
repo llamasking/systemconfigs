@@ -190,7 +190,7 @@ input#urlbar-input {
 	min-height: var(--tab-height) !important;
 	font-size: var(--tab-font-size) !important;
 	font-weight: var(--tab-font-weight) !important;
-	transition: background-color var(--transition-speed) ease !important;
+	/*transition: background-color var(--transition-speed) ease-in-out !important;*/
 }
 
 /* Hovered Browser Tabs */
