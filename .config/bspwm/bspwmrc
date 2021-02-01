@@ -1,7 +1,7 @@
 #!/bin/sh
 
 # Start the basic things
-picom --experimental-backends &
+picom --experimental-backends --dbus &
 sxhkd &
 
 # Left monitor gets desktops 1, 2, 3 and right gets 4, 5, and 6.
@@ -18,11 +18,14 @@ bspc config gapless_monocle      true
 # Misc rules
 bspc rule -a Steam state=floating center=on			# Standard Steam Windows
 bspc rule -a steam state=floating layer=above border=off	# Big Picture and Controller Keyboard
-bspc rule -a Gimp state=floating follow=on
+bspc rule -a Gimp state=floating
 bspc rule -a Peek state=floating layer=above
-bspc rule -a Screenshot state=floating layer=above
+bspc rule -a Gnome-screenshot state=floating layer=above
 bspc rule -a Plank state=floating manage=on border=off focus=off locked=on
 bspc rule -a Rofi layer=above border=off focus=off locked=on
+
+# Games
+bspc rule -a "Sea of Thieves" state=floating			# I don't remember why I do this but I'm too scared to get rid of it and find out
 
 # Feh is for my desktop background
 bspc rule -a feh state=floating follow=on
@@ -40,11 +43,8 @@ plank &
 /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1 &
 gnome-keyring-daemon -r &
 
-# VNC
-#x11vnc -display :0 -auth ~/.Xauthority -ncache 10 -usepw -forever -o ~/.vnc/vncserver.log -bg &
-
 # Corsair Mouse RGB Control
 ckb-next -b &
 
 # NextCloud
-(wait 5 && nextcloud --background) &
+(sleep 5 && nextcloud --background) &

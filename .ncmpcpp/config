@@ -13,7 +13,8 @@ now_playing_suffix = "$/b"
 browser_playlist_prefix = "$1»$1 "
 
 [statusbar]
-progressbar_look = "━━━"
+#progressbar_look = "━━━"
+progressbar_look = "─╼─"
 progressbar_color = "9"
 statusbar_visibility = "yes"
 progressbar_elapsed_color = "cyan"
@@ -33,12 +34,13 @@ external_editor = "nano"
 volume_change_step = 5
 follow_now_playing_lyrics = yes
 
-visualizer_fifo_path = "/tmp/mpd.fifo"
+visualizer_data_source = "/tmp/mpd.fifo"
 visualizer_output_name = "Visualizer"
-visualizer_sync_interval = "30"
 visualizer_in_stereo = "yes"
 visualizer_type = "spectrum"
 visualizer_look = "+|"
 visualizer_color = 52, 46, 40, 34, 28, 58, 94, 200
 
 user_interface = alternative
+
+lyrics_fetchers = genius, musixmatch, metrolyrics, justsomelyrics, jahlyrics, plyrics, tekstowo, zeneszoveg, internet
