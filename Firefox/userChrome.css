@@ -18,14 +18,14 @@ The code is somewhat messy but I won't bother cleaning it as long as everything 
 
 /* Variables */
 :root {
-	--color-bg: #1c1c1c;
-	--color-hover: #252525;
-	--color-selected: #333333;
-	--close-button-opacity-nonhover: 0.2;
-	--transition-speed: 0.3s;
+  --color-bg: #1c1c1c;
+  --color-hover: #252525;
+  --color-selected: #333333;
+  --close-button-opacity-nonhover: 0.2;
+  --transition-speed: 0.3s;
 
-	/* Absurd variables used for testing */
-	/*
+  /* Absurd variables used for testing */
+  /*
 	--color-bg: black;
 	--color-hover: orangered;
 	--color-selected: mediumturquoise;
@@ -33,275 +33,284 @@ The code is somewhat messy but I won't bother cleaning it as long as everything 
 	--transition-speed: 3s;
 	*/
 
-	--gap-between-tabs: 0px;
-	--tab-font-size: 8.5pt;
-	--tab-font-weight: 250;
-	--tab-font-selected-weight: 350;
-	--tab-height: 33px;
+  --gap-between-tabs: 0px;
+  --tab-font-size: 8.5pt;
+  --tab-font-weight: 250;
+  --tab-font-selected-weight: 350;
+  --tab-height: 33px;
 
-	--urlbar-height: 33px;
-	--urlbar-text-size: 8pt;
-	--urlbar-text-weight: 325;
+  --urlbar-height: 33px;
+  --urlbar-text-size: 8pt;
+  --urlbar-text-weight: 325;
 
-	/* Firefox variables */
-	/* NOTE TO SELF: https://developer.mozilla.org/en-US/docs/Mozilla/Add-ons/WebExtensions/manifest.json/theme */
-	--lwt-toolbar-field-color: #fefefa !important;
-	--lwt-toolbar-field-focus: var(--color-selected) !important;
-	--lwt-toolbar-field-border-color: #666 !important;
-	--lwt-toolbar-field-focus-background-color: var(--color-bg) !important;
-	--lwt-toolbar-field-background-color: var(--color-hover) !important;
-	--toolbar-field-focus-border-color: var(--color-hover) !important;
-	--in-content-page-background: var(--color-bg) !important;
-	--focus-outline-color: white !important;
-	
-	--button-bgcolor: var(--color-bg) !important;
-	--button-hover-bgcolor: var(--color-selected) !important;
-	--button-active-bgcolor: color-mix(in srgb, var(--color-bg) 80%, white) !important;
+  /* Firefox variables */
+  /* NOTE TO SELF: https://developer.mozilla.org/en-US/docs/Mozilla/Add-ons/WebExtensions/manifest.json/theme */
+  --lwt-toolbar-field-color: #fefefa !important;
+  --lwt-toolbar-field-focus: var(--color-selected) !important;
+  --lwt-toolbar-field-border-color: #666 !important;
+  --lwt-toolbar-field-focus-background-color: var(--color-bg) !important;
+  --lwt-toolbar-field-background-color: var(--color-hover) !important;
+  --toolbar-field-focus-border-color: var(--color-hover) !important;
+  --in-content-page-background: var(--color-bg) !important;
+  --focus-outline-color: white !important;
 
-	--checkbox-border-color: color-mix(in srgb, var(--color-bg) 75%, white) !important;
-	--checkbox-unchecked-bgcolor: color-mix(in srgb, var(--color-bg) 95%, white) !important;
-	--checkbox-unchecked-hover-bgcolor: color-mix(in srgb, var(--color-bg) 85%, white) !important;
-	--checkbox-unchecked-active-bgcolor: color-mix(in srgb, var(--color-bg) 65%, white) !important;
-	--checkbox-checked-bgcolor: color-mix(in srgb, var(--color-bg) 15%, white) !important;
-	--checkbox-checked-color: var(--color-bg) !important;
-	--checkbox-checked-hover-bgcolor: color-mix(in srgb, var(--color-bg) 25%, white) !important;
-	--checkbox-checked-active-bgcolor: color-mix(in srgb, var(--color-bg) 55%, white) !important;
+  --button-bgcolor: var(--color-bg) !important;
+  --button-hover-bgcolor: var(--color-selected) !important;
+  --button-active-bgcolor: color-mix(in srgb, var(--color-bg) 80%, white) !important;
+
+  --checkbox-border-color: color-mix(in srgb, var(--color-bg) 75%, white) !important;
+  --checkbox-unchecked-bgcolor: color-mix(in srgb, var(--color-bg) 95%, white) !important;
+  --checkbox-unchecked-hover-bgcolor: color-mix(in srgb, var(--color-bg) 85%, white) !important;
+  --checkbox-unchecked-active-bgcolor: color-mix(in srgb, var(--color-bg) 65%, white) !important;
+  --checkbox-checked-bgcolor: color-mix(in srgb, var(--color-bg) 15%, white) !important;
+  --checkbox-checked-color: var(--color-bg) !important;
+  --checkbox-checked-hover-bgcolor: color-mix(in srgb, var(--color-bg) 25%, white) !important;
+  --checkbox-checked-active-bgcolor: color-mix(in srgb, var(--color-bg) 55%, white) !important;
 }
 
 /* Menu Button: The somewhat important button that nobody thinks about */
 #PanelUI-button {
-	display: block !important;
-	position: fixed !important;
-	right: -4px !important;
-  top: 4px !important;;
+  display: block !important;
+  position: fixed !important;
+  right: -4px !important;
+  top: 4px !important;
 }
 
 /* All Tabs Button: The one that you see if you want to murder your poor ram */
 #alltabs-button {
-	position: fixed !important;
-	left: -1px !important;
-	padding-right: 2px !important;
+  position: fixed !important;
+  left: -1px !important;
+  padding-right: 2px !important;
 }
 
 /* Navigation Bar Includes Everything to Left of Tabs */
 #nav-bar {
-	margin-top: -33px !important;
-	margin-right: 70vw !important;
-	height: 33px !important;
-	padding-top: 0px !important;
-	padding-left: 0px !important;
+  margin-top: -33px !important;
+  margin-right: 70vw !important;
+  height: 33px !important;
+  padding-top: 0px !important;
+  padding-left: 0px !important;
 }
 
 /* Overflow Button: The one where you hide the extensions */
 overflow-button {
-	padding-bottom: 2px !important;
+  padding-bottom: 2px !important;
 }
 
 /* Titlebar: The one where all the tabs go */
 #titlebar,
 #navigator-toolbox {
-	background-color: var(--color-bg) !important;
+  background-color: var(--color-bg) !important;
 }
 
 /* Removes a one pixel black line from the entire "navigator toolbox" (that's the entire top bar thing). */
 #navigator-toolbox {
-	border-bottom: none !important;
+  border-bottom: none !important;
 }
 
 /* Urlbar: The one where the long computery bits go */
 #urlbar[breakout][breakout-extend] {
-	top: calc((var(--urlbar-toolbar-height) - var(--urlbar-height)) / 2) !important;
-	left: 0 !important;
-	width: 100% !important;
+  top: calc(
+    (var(--urlbar-toolbar-height) - var(--urlbar-height)) / 2
+  ) !important;
+  left: 0 !important;
+  width: 100% !important;
 }
 
-#urlbar[breakout][breakout-extend]>#urlbar-input-container {
-	height: var(--urlbar-height) !important;
-	padding-block: 0px !important;
-	padding-inline: 0px !important;
+#urlbar[breakout][breakout-extend] > #urlbar-input-container {
+  height: var(--urlbar-height) !important;
+  padding-block: 0px !important;
+  padding-inline: 0px !important;
 }
 
 #urlbar-container {
-	margin-top: 1px !important;
-	max-width: 950px !important;
-	min-width: 150px !important;
+  margin-top: 1px !important;
+  max-width: 950px !important;
+  min-width: 150px !important;
 }
 
 #urlbar #urlbar-background {
-	background-color: var(--color-bg) !important;
-	border: none !important;
-	box-shadow: none !important;
+  background-color: var(--color-bg) !important;
+  border: none !important;
+  box-shadow: none !important;
 }
 
 input#urlbar-input {
-	caret-color: var(--lwt-toolbar-field-focus-color) !important;
-	font-family: var(--urlbar-text-font) !important;
-	font-size: var(--urlbar-text-size) !important;
-	font-weight: var(--urlbar-text-weight) !important;
-	width: 99999px !important;
+  caret-color: var(--lwt-toolbar-field-focus-color) !important;
+  font-family: var(--urlbar-text-font) !important;
+  font-size: var(--urlbar-text-size) !important;
+  font-weight: var(--urlbar-text-weight) !important;
+  width: 99999px !important;
 }
 
 /* Https Indicator: Please put in your credit card details. */
 #identity-box {
-	margin: -2px !important;
-	padding-bottom: 2px !important;
-	padding-right: 4px !important;
-	border: none !important;
+  margin: -2px !important;
+  padding-bottom: 2px !important;
+  padding-right: 4px !important;
+  border: none !important;
 }
 
 /* Search Icon: Replaces Https Indicator on new tabs */
-#urlbar:not(.searchButton) > #urlbar-input-container > #identity-box[pageproxystate="invalid"] #identity-icon {
-	opacity: 0.4 !important;
+#urlbar:not(.searchButton)
+  > #urlbar-input-container
+  > #identity-box[pageproxystate="invalid"]
+  #identity-icon {
+  opacity: 0.4 !important;
 }
 
 /* Reload: The one for when you fuck up in inspect element */
 #reload-button {
-	margin-right: -6px !important;
+  margin-right: -6px !important;
 }
 
 /* Bookmark Bar: The one bar that doesn't need to exist */
 #PlacesToolbarItems {
-	margin-top: 1px !important;
-	-moz-box-pack: center;
+  margin-top: 1px !important;
+  -moz-box-pack: center;
 }
 
 /* New Tab: The one button I don't use anymore */
 #tabs-newtab-button {
-	padding: 1px 4px 0px 3px !important;
+  padding: 1px 4px 0px 3px !important;
 }
 
 /* Tabs Toolbar: The one that's quite literally the whole fucking bar */
 #TabsToolbar {
-	margin-left: 30vw !important;
-	margin-right: 28px !important;
+  margin-left: 30vw !important;
+  margin-right: 28px !important;
 }
 
 /* Handles the theming of bookmark folders */
 .bookmark-item {
-	transition: all var(--transition-speed) ease !important;
+  transition: all var(--transition-speed) ease !important;
 }
 
 /* Make close and audio buttons partially visible unless hovered over */
 .tab-icon-sound,
 .tab-icon-overlay[soundplaying],
 .tab-close-button {
-	opacity: var(--close-button-opacity-nonhover) !important;
-	transition: all var(--transition-speed) ease !important;
-	position: fixed;
-	right: 0;
+  opacity: var(--close-button-opacity-nonhover) !important;
+  transition: all var(--transition-speed) ease !important;
+  position: fixed;
+  right: 0;
 }
 
 .tab-close-button:hover,
 .tab-icon-overlay[soundplaying]:hover,
 .tab-icon-sound:hover {
-	opacity: 1 !important;
+  opacity: 1 !important;
 }
 
 /* Don't indent urls */
-.urlbarView.megabar .urlbarView-results[wrap] > .urlbarView-row[has-url] > .urlbarView-row-inner > .urlbarView-url {
-	padding-inline-start: revert !important;
+.urlbarView.megabar
+  .urlbarView-results[wrap]
+  > .urlbarView-row[has-url]
+  > .urlbarView-row-inner
+  > .urlbarView-url {
+  padding-inline-start: revert !important;
 }
 
 /* Regular Browser Tabs */
 .tabbrowser-tab {
-	background-color: var(--color-bg) !important;
-	margin-inline-end: var(--gap-between-tabs) !important;
-	max-height: var(--tab-height) !important;
-	min-height: var(--tab-height) !important;
-	font-size: var(--tab-font-size) !important;
-	font-weight: var(--tab-font-weight) !important;
-	/*transition: background-color var(--transition-speed) ease !important;*/
+  background-color: var(--color-bg) !important;
+  margin-inline-end: var(--gap-between-tabs) !important;
+  max-height: var(--tab-height) !important;
+  min-height: var(--tab-height) !important;
+  font-size: var(--tab-font-size) !important;
+  font-weight: var(--tab-font-weight) !important;
+  /*transition: background-color var(--transition-speed) ease !important;*/
 }
 
 /* Hovered Browser Tabs */
 .tabbrowser-tab:hover {
-	background-color: var(--color-hover) !important;
-	font-size: var(--tab-font-size) !important;
-	font-weight: var(--tab-font-weight) !important;
+  background-color: var(--color-hover) !important;
+  font-size: var(--tab-font-size) !important;
+  font-weight: var(--tab-font-weight) !important;
 }
 
 /* Selected Browser Tabs */
 .tabbrowser-tab[selected="true"],
 .tabbrowser-tab[multiselected],
 .tabbrowser-tab[visuallyselected="true"] {
-	background-color: var(--color-selected) !important;
-	font-size: var(--tab-font-size) !important;
-	font-weight: var(--tab-font-selected-weight) !important;
+  background-color: var(--color-selected) !important;
+  font-size: var(--tab-font-size) !important;
+  font-weight: var(--tab-font-selected-weight) !important;
 }
 
 /* Pinned tabs */
 .tabbrowser-tab[pinned="true"] {
-	max-width: var(--tab-height) !important;
-	min-width: var(--tab-height) !important;
+  max-width: var(--tab-height) !important;
+  min-width: var(--tab-height) !important;
 }
 
 .tabbrowser-tab[pinned="true"] .tab-icon-image {
-	align-items: center !important;
-	display: inline-block !important;
-	min-height: var(--pinned-tab-favicon-dim) !important;
-	min-width: var(--pinned-tab-favicon-dim) !important;
+  align-items: center !important;
+  display: inline-block !important;
+  min-height: var(--pinned-tab-favicon-dim) !important;
+  min-width: var(--pinned-tab-favicon-dim) !important;
 }
 
 .tabbrowser-tab[pinned="true"] .tab-label-container {
-	display: none !important;
+  display: none !important;
 }
 
 /* Make the container text on the url bar smaller and not colored. Make zoom indicator smaller, too. */
 #userContext-icons,
 #urlbar-zoom-button {
-	scale: 80%;
-	margin: -1px !important;
-	--identity-tab-color: #ccc !important;
-	--identity-icon-color: #ccc !important;
+  scale: 80%;
+  margin: -1px !important;
+  --identity-tab-color: #ccc !important;
+  --identity-icon-color: #ccc !important;
 }
 
 /* Make the sidebar dark with bookmarks, history, and synced tabs */
 #sidebar-box,
 .sidebar-panel,
 #template-container.content-scrollable {
-	background: var(--color-bg) !important;
+  background: var(--color-bg) !important;
 }
 
 .sidebar-splitter {
-	width: 1px !important;
-	border: 0 !important;
-	background: var(--color-hover) !important;
+  width: 1px !important;
+  border: 0 !important;
+  background: var(--color-hover) !important;
 }
 
 #sidebar-switcher-target {
-	background: none !important;
-	transition: all var(--transition-speed) ease !important;
+  background: none !important;
+  transition: all var(--transition-speed) ease !important;
 }
 
 #sidebar-switcher-target:hover {
-	background: var(--color-selected) !important;
-	transition: all var(--transition-speed) ease !important;
+  background: var(--color-selected) !important;
+  transition: all var(--transition-speed) ease !important;
 }
 
 /* Make extension overflow menu dark */
 #widget-overflow-mainView {
-	background: var(--color-bg) !important;
+  background: var(--color-bg) !important;
 }
 
 #overflowMenu-customize-button {
-	background: var(--color-hover) !important;
+  background: var(--color-hover) !important;
 }
 
 #widget-overflow-fixed-list .toolbarbutton-1:hover,
 #overflowMenu-customize-button:hover {
-	background: var(--color-selected) !important;
-	transition: all var(--transition-speed) ease !important;
+  background: var(--color-selected) !important;
+  transition: all var(--transition-speed) ease !important;
 }
 
 /* Make the find bar nice and dark */
 findbar {
-	background: var(--color-bg) !important;
-	border-top-color: var(--color-hover) !important;
+  background: var(--color-bg) !important;
+  border-top-color: var(--color-hover) !important;
 }
 
 .findbar-textbox {
-	background: var(--color-bg) !important;
-	border-color: var(--checkbox-border-color) !important;
+  background: var(--color-bg) !important;
+  border-color: var(--checkbox-border-color) !important;
 }
 
 /*
@@ -325,22 +334,21 @@ findbar {
 #browser vbox#appcontent tabbrowser,
 #content,
 #tabbrowser-tabpanels,
-browser[type=content-primary],
-browser[type=content] > html {
-	background: var(--in-content-page-background) !important;
+browser[type="content-primary"],
+browser[type="content"] > html {
+  background: var(--in-content-page-background) !important;
 }
 
 /* I don't know what this shit does but it looks important. */
 .browser-toolbar:not(.titlebar-color) {
-	background-color: var(--color-bg) !important;
+  background-color: var(--color-bg) !important;
 }
-
 
 /* Toolbar Buttons (Addons, Bookmarks, Downloads, Menu, etc.) */
 .toolbarbutton-icon:hover:not(:active) {
   /*! background-color: color-mix(in srgb, currentColor 15%, transparent) !important; */
-	background-color: var(--color-selected) !important;
-	transition: all var(--transition-speed) ease !important;
+  background-color: var(--color-selected) !important;
+  transition: all var(--transition-speed) ease !important;
 }
 
 /* Hide lots of shit:
@@ -378,5 +386,5 @@ browser[type=content] > html {
 .tabbrowser-tab::before,
 .tabbrowser-tab::after,
 .tabbrowser-tab .tab-icon-image {
-	display: none !important;
+  display: none !important;
 }
