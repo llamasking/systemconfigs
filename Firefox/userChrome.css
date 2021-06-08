@@ -26,7 +26,7 @@ The code is somewhat messy but I won't bother cleaning it as long as everything 
 
 	/* Absurd variables used for testing */
 	/*
-	--color-bg: gray;
+	--color-bg: black;
 	--color-hover: orangered;
 	--color-selected: mediumturquoise;
 	--close-button-opacity-nonhover: 0.5;
@@ -52,15 +52,28 @@ The code is somewhat messy but I won't bother cleaning it as long as everything 
 	--lwt-toolbar-field-background-color: var(--color-hover) !important;
 	--toolbar-field-focus-border-color: var(--color-hover) !important;
 	--in-content-page-background: var(--color-bg) !important;
+	--focus-outline-color: white !important;
+	
+	--button-bgcolor: var(--color-bg) !important;
+	--button-hover-bgcolor: var(--color-selected) !important;
+	--button-active-bgcolor: color-mix(in srgb, var(--color-bg) 80%, white) !important;
+
+	--checkbox-border-color: color-mix(in srgb, var(--color-bg) 75%, white) !important;
+	--checkbox-unchecked-bgcolor: color-mix(in srgb, var(--color-bg) 95%, white) !important;
+	--checkbox-unchecked-hover-bgcolor: color-mix(in srgb, var(--color-bg) 85%, white) !important;
+	--checkbox-unchecked-active-bgcolor: color-mix(in srgb, var(--color-bg) 65%, white) !important;
+	--checkbox-checked-bgcolor: color-mix(in srgb, var(--color-bg) 15%, white) !important;
+	--checkbox-checked-color: var(--color-bg) !important;
+	--checkbox-checked-hover-bgcolor: color-mix(in srgb, var(--color-bg) 25%, white) !important;
+	--checkbox-checked-active-bgcolor: color-mix(in srgb, var(--color-bg) 55%, white) !important;
 }
 
 /* Menu Button: The somewhat important button that nobody thinks about */
 #PanelUI-button {
 	display: block !important;
 	position: fixed !important;
-	right: 0px !important;
-	padding-top: 2px !important;
-	border: none !important;
+	right: -4px !important;
+  top: 4px !important;;
 }
 
 /* All Tabs Button: The one that you see if you want to murder your poor ram */
@@ -136,6 +149,11 @@ input#urlbar-input {
 	border: none !important;
 }
 
+/* Search Icon: Replaces Https Indicator on new tabs */
+#urlbar:not(.searchButton) > #urlbar-input-container > #identity-box[pageproxystate="invalid"] #identity-icon {
+	opacity: 0.4 !important;
+}
+
 /* Reload: The one for when you fuck up in inspect element */
 #reload-button {
 	margin-right: -6px !important;
@@ -165,6 +183,7 @@ input#urlbar-input {
 
 /* Make close and audio buttons partially visible unless hovered over */
 .tab-icon-sound,
+.tab-icon-overlay[soundplaying],
 .tab-close-button {
 	opacity: var(--close-button-opacity-nonhover) !important;
 	transition: all var(--transition-speed) ease !important;
@@ -173,6 +192,7 @@ input#urlbar-input {
 }
 
 .tab-close-button:hover,
+.tab-icon-overlay[soundplaying]:hover,
 .tab-icon-sound:hover {
 	opacity: 1 !important;
 }
@@ -190,7 +210,7 @@ input#urlbar-input {
 	min-height: var(--tab-height) !important;
 	font-size: var(--tab-font-size) !important;
 	font-weight: var(--tab-font-weight) !important;
-	/*transition: background-color var(--transition-speed) ease-in-out !important;*/
+	/*transition: background-color var(--transition-speed) ease !important;*/
 }
 
 /* Hovered Browser Tabs */
@@ -279,6 +299,12 @@ findbar {
 	border-top-color: var(--color-hover) !important;
 }
 
+.findbar-textbox {
+	background: var(--color-bg) !important;
+	border-color: var(--checkbox-border-color) !important;
+}
+
+/*
 .findbar-button,
 .findbar-find-next,
 .findbar-find-previous {
@@ -286,13 +312,14 @@ findbar {
 	transition: all var(--transition-speed) ease !important;
 }
 
-.findbar-button:hover {
+.findbar-button:hover:not(:active) {
 	background: var(--color-hover) !important;
 }
 
 .findbar-button[checked="true"] {
 	background: var(--color-selected) !important;
 }
+*/
 
 /* Changes "flash" when opening a new tab */
 #browser vbox#appcontent tabbrowser,
@@ -306,6 +333,14 @@ browser[type=content] > html {
 /* I don't know what this shit does but it looks important. */
 .browser-toolbar:not(.titlebar-color) {
 	background-color: var(--color-bg) !important;
+}
+
+
+/* Toolbar Buttons (Addons, Bookmarks, Downloads, Menu, etc.) */
+.toolbarbutton-icon:hover:not(:active) {
+  /*! background-color: color-mix(in srgb, currentColor 15%, transparent) !important; */
+	background-color: var(--color-selected) !important;
+	transition: all var(--transition-speed) ease !important;
 }
 
 /* Hide lots of shit:
