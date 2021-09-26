@@ -26,12 +26,12 @@ The code is somewhat messy but I won't bother cleaning it as long as everything 
 
   /* Absurd variables used for testing */
   /*
-	--color-bg: black;
-	--color-hover: orangered;
-	--color-selected: mediumturquoise;
-	--close-button-opacity-nonhover: 0.5;
-	--transition-speed: 3s;
-	*/
+  --color-bg: black;
+  --color-hover: orangered;
+  --color-selected: mediumturquoise;
+  --close-button-opacity-nonhover: 0.5;
+  --transition-speed: 3s;
+  */
 
   --gap-between-tabs: 0px;
   --tab-font-size: 8.5pt;
@@ -45,6 +45,8 @@ The code is somewhat messy but I won't bother cleaning it as long as everything 
 
   /* Firefox variables */
   /* NOTE TO SELF: https://developer.mozilla.org/en-US/docs/Mozilla/Add-ons/WebExtensions/manifest.json/theme */
+  --arrowpanel-background: var(--color-bg) !important;
+
   --lwt-toolbar-field-color: #fefefa !important;
   --lwt-toolbar-field-focus: var(--color-selected) !important;
   --lwt-toolbar-field-border-color: #666 !important;
@@ -55,7 +57,7 @@ The code is somewhat messy but I won't bother cleaning it as long as everything 
   --focus-outline-color: white !important;
 
   --button-bgcolor: var(--color-bg) !important;
-  --button-hover-bgcolor: var(--color-selected) !important;
+  --button-hover-bgcolor: var(--color-hover) !important;
   --button-active-bgcolor: color-mix(in srgb, var(--color-bg) 80%, white) !important;
 
   --checkbox-border-color: color-mix(in srgb, var(--color-bg) 75%, white) !important;
@@ -73,7 +75,7 @@ The code is somewhat messy but I won't bother cleaning it as long as everything 
   display: block !important;
   position: fixed !important;
   right: -4px !important;
-  top: 4px !important;
+  top: 3px !important;
 }
 
 /* All Tabs Button: The one that you see if you want to murder your poor ram */
@@ -127,6 +129,7 @@ overflow-button {
   margin-top: 1px !important;
   max-width: 950px !important;
   min-width: 150px !important;
+  margin-right: 0px !important;
 }
 
 #urlbar #urlbar-background {
@@ -178,7 +181,7 @@ input#urlbar-input {
 /* Tabs Toolbar: The one that's quite literally the whole fucking bar */
 #TabsToolbar {
   margin-left: 30vw !important;
-  margin-right: 28px !important;
+  margin-right: 36px !important;
 }
 
 /* Handles the theming of bookmark folders */
@@ -313,22 +316,10 @@ findbar {
   border-color: var(--checkbox-border-color) !important;
 }
 
-/*
-.findbar-button,
 .findbar-find-next,
 .findbar-find-previous {
-  outline: 0 !important;
-	transition: all var(--transition-speed) ease !important;
+  transition: all calc(var(--transition-speed) / 2) ease !important;
 }
-
-.findbar-button:hover:not(:active) {
-	background: var(--color-hover) !important;
-}
-
-.findbar-button[checked="true"] {
-	background: var(--color-selected) !important;
-}
-*/
 
 /* Changes "flash" when opening a new tab */
 #browser vbox#appcontent tabbrowser,
@@ -339,16 +330,26 @@ browser[type="content"] > html {
   background: var(--in-content-page-background) !important;
 }
 
-/* I don't know what this shit does but it looks important. */
+/* URL Bar, Addons, and that general area. */
 .browser-toolbar:not(.titlebar-color) {
   background-color: var(--color-bg) !important;
 }
 
 /* Toolbar Buttons (Addons, Bookmarks, Downloads, Menu, etc.) */
-.toolbarbutton-icon:hover:not(:active) {
-  /*! background-color: color-mix(in srgb, currentColor 15%, transparent) !important; */
-  background-color: var(--color-selected) !important;
+.toolbarbutton-icon/* :hover:not(:active) */,
+toolbarbutton .toolbarbutton-badge-stack {
   transition: all var(--transition-speed) ease !important;
+}
+
+/* I am uncertain as to the purpose of this. */
+panelview {
+  background-color: var(--color-bg) !important;
+}
+
+/* More Muted Active Bookmark Icon */
+#star-button {
+  /*--toolbarbutton-icon-fill-attention: var(--checkbox-checked-bgcolor) !important;*/
+  --toolbarbutton-icon-fill-attention: currentColor !important;
 }
 
 /* Hide lots of shit:
@@ -356,6 +357,8 @@ browser[type="content"] > html {
  * Bookmark button,
  * Pocket button,
  * HTTPS icon,
+ * Reader Mode Icon
+ * Addon buttons on URL bar (Multi-Account Containers)
  * Bookmark icon from autocompleted links,
  * I don't actually know this one,
  * I think this one shows your picture when logged into Sync,
@@ -368,12 +371,13 @@ browser[type="content"] > html {
  * The tab seperators on either side of a tab,
  * Favicons.
  */
-
 #back-button,
 #forward-button,
-#star-button,
+#star-button-box,
 #pocket-button,
 #tracking-protection-icon-container,
+#reader-mode-button,
+.urlbar-addon-page-action,
 .urlbarView-type-icon,
 .urlbar-history-dropmarker,
 .titlebar-buttonbox-container,
