@@ -112,9 +112,7 @@ overflow-button {
 
 /* Urlbar: The one where the long computery bits go */
 #urlbar[breakout][breakout-extend] {
-  top: calc(
-    (var(--urlbar-toolbar-height) - var(--urlbar-height)) / 2
-  ) !important;
+  top: calc((var(--urlbar-toolbar-height) - var(--urlbar-height)) / 2) !important;
   left: 0 !important;
   width: 100% !important;
 }
@@ -222,7 +220,6 @@ input#urlbar-input {
   min-height: var(--tab-height) !important;
   font-size: var(--tab-font-size) !important;
   font-weight: var(--tab-font-weight) !important;
-  /*transition: background-color var(--transition-speed) ease !important;*/
 }
 
 /* Hovered Browser Tabs */
@@ -336,7 +333,7 @@ browser[type="content"] > html {
 }
 
 /* Toolbar Buttons (Addons, Bookmarks, Downloads, Menu, etc.) */
-.toolbarbutton-icon/* :hover:not(:active) */,
+.toolbarbutton-icon,
 toolbarbutton .toolbarbutton-badge-stack {
   transition: all var(--transition-speed) ease !important;
 }
@@ -346,10 +343,18 @@ panelview {
   background-color: var(--color-bg) !important;
 }
 
-/* More Muted Active Bookmark Icon */
+/* More Muted Bookmarked Icon */
 #star-button {
-  /*--toolbarbutton-icon-fill-attention: var(--checkbox-checked-bgcolor) !important;*/
   --toolbarbutton-icon-fill-attention: currentColor !important;
+}
+
+/* Makes the color of the extension information on the URL bar match. */
+#identity-icon-box {
+  transition: all var(--transition-speed) ease !important;
+}
+
+#identity-icon-box:not(:hover) {
+  background-color: transparent !important;
 }
 
 /* Hide lots of shit:
