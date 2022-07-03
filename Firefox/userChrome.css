@@ -37,7 +37,7 @@ The code is somewhat messy but I won't bother cleaning it as long as everything 
   --tab-font-size: 8.5pt;
   --tab-font-weight: 250;
   --tab-font-selected-weight: 350;
-  --tab-height: 34px;
+  --tab-height: 33px;
 
   --urlbar-height: var(--tab-height);
   --urlbar-text-size: 8pt;
@@ -325,7 +325,7 @@ toolbarbutton .toolbarbutton-badge-stack {
   display: block !important;
   position: fixed !important;
   right: -8px !important;
-  top: 9px !important;
+  top: 8px !important;
 }
 
 .toolbarbutton-1 {
