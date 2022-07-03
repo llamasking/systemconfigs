@@ -37,7 +37,7 @@ The code is somewhat messy but I won't bother cleaning it as long as everything 
   --tab-font-size: 8.5pt;
   --tab-font-weight: 250;
   --tab-font-selected-weight: 350;
-  --tab-height: 33px;
+  --tab-height: 34px;
 
   --urlbar-height: var(--tab-height);
   --urlbar-text-size: 8pt;
@@ -68,14 +68,6 @@ The code is somewhat messy but I won't bother cleaning it as long as everything 
   --checkbox-checked-color: var(--color-bg) !important;
   --checkbox-checked-hover-bgcolor: color-mix(in srgb, var(--color-bg) 25%, white) !important;
   --checkbox-checked-active-bgcolor: color-mix(in srgb, var(--color-bg) 55%, white) !important;
-}
-
-/* Menu Button: The somewhat important button that nobody thinks about */
-#PanelUI-button {
-  display: block !important;
-  position: fixed !important;
-  right: -8px !important;
-  top: 9px !important;
 }
 
 /* All Tabs Button: The one that you see if you want to murder your poor ram */
@@ -185,8 +177,6 @@ input#urlbar-input {
 .tab-close-button {
   opacity: var(--close-button-opacity-nonhover) !important;
   transition: all var(--transition-speed) ease !important;
-  position: fixed;
-  right: 0;
 }
 
 .tab-close-button:hover,
@@ -330,8 +320,16 @@ toolbarbutton .toolbarbutton-badge-stack {
   transition: all var(--transition-speed) ease !important;
 }
 
+/* Mostly the menu button BUT it also affects the other toolbar buttons for some reason. */
+#PanelUI-button {
+  display: block !important;
+  position: fixed !important;
+  right: -8px !important;
+  top: 9px !important;
+}
+
 .toolbarbutton-1 {
-  margin: -8px 0px 0px 0px !important;
+  margin: -7px 0px 0px 0px !important;
 }
 
 
