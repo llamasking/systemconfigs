@@ -39,7 +39,7 @@ The code is somewhat messy but I won't bother cleaning it as long as everything 
   --tab-font-selected-weight: 350;
   --tab-height: 33px;
 
-  --urlbar-height: 33px;
+  --urlbar-height: var(--tab-height);
   --urlbar-text-size: 8pt;
   --urlbar-text-weight: 325;
 
@@ -74,8 +74,8 @@ The code is somewhat messy but I won't bother cleaning it as long as everything 
 #PanelUI-button {
   display: block !important;
   position: fixed !important;
-  right: -4px !important;
-  top: 3px !important;
+  right: -8px !important;
+  top: 9px !important;
 }
 
 /* All Tabs Button: The one that you see if you want to murder your poor ram */
@@ -89,7 +89,7 @@ The code is somewhat messy but I won't bother cleaning it as long as everything 
 #nav-bar {
   margin-top: -33px !important;
   margin-right: 70vw !important;
-  height: 33px !important;
+  height: var(--tab-height) !important;
   padding-top: 0px !important;
   padding-left: 0px !important;
 }
@@ -124,10 +124,9 @@ overflow-button {
 }
 
 #urlbar-container {
-  margin-top: 1px !important;
   max-width: 950px !important;
   min-width: 150px !important;
-  margin-right: 0px !important;
+  margin: 0px !important;
 }
 
 #urlbar #urlbar-background {
@@ -142,14 +141,6 @@ input#urlbar-input {
   font-size: var(--urlbar-text-size) !important;
   font-weight: var(--urlbar-text-weight) !important;
   width: 99999px !important;
-}
-
-/* Https Indicator: Please put in your credit card details. */
-#identity-box {
-  margin: -2px !important;
-  padding-bottom: 2px !important;
-  padding-right: 4px !important;
-  border: none !important;
 }
 
 /* Search Icon: Replaces Https Indicator on new tabs */
@@ -180,6 +171,7 @@ input#urlbar-input {
 #TabsToolbar {
   margin-left: 30vw !important;
   margin-right: 36px !important;
+  height: var(--tab-height) !important;
 }
 
 /* Handles the theming of bookmark folders */
@@ -338,6 +330,11 @@ toolbarbutton .toolbarbutton-badge-stack {
   transition: all var(--transition-speed) ease !important;
 }
 
+.toolbarbutton-1 {
+  margin: -8px 0px 0px 0px !important;
+}
+
+
 /* I am uncertain as to the purpose of this. */
 panelview {
   background-color: var(--color-bg) !important;
@@ -380,7 +377,6 @@ panelview {
 #forward-button,
 #star-button-box,
 #pocket-button,
-#tracking-protection-icon-container,
 #reader-mode-button,
 .urlbar-addon-page-action,
 .urlbarView-type-icon,
